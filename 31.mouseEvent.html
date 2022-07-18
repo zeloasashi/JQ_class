@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: coral;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            $('.box').click(function(){
+                console.log('clicked')
+            })
+            
+            $('.box').dblclick(function(){
+                console.log('double clicked')
+            })
+
+            $('.box').contextmenu(function(){
+                console.log('點擊滑鼠右鍵')
+            })
+
+            $('.box').mousedown(function(){
+                console.log('在.box內按下滑鼠')
+            })
+
+            $('.box').mouseup(function(){
+                console.log('在.box內抬起滑鼠才會有反應')
+            })
+
+            // $('.box').mouseenter(function(){
+            //     console.log('滑鼠移進.box')
+            //     $('.box').css('background','lightblue')
+            // })
+
+            // $('.box').mouseleave(function(){
+            //     console.log('滑鼠離開.box')
+            //     $('.box').css('background','coral')
+            // })
+            
+            // 唯一可以自己做兩次表示進入和離開
+            $('.box').hover(function(){
+                console.log('滑鼠移進.box')
+                console.log('滑鼠移出.box')
+                $('.box').css('background','lightgreen')
+            },function(){$('.box').css('background','pink')
+        })
+        </script>
+</body>
+</html>

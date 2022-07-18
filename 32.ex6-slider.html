@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .wrap{
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            
+        }
+        /* 讓圖片變得跟爸爸一樣大有3個方法
+        1.爸爸ul寬度改500%，因為總共5張圖，每張都100%
+        2.祖父wrap的寬度設4000px，因為總共5張圖，每張都800px，爸爸ul寬度設100%
+        3.用flex basis設0，然後flex gorw設1，先一起縮小再一起放大
+         */
+        .wrap ul{
+            width: 500%;
+        }
+        li img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="tran d-flex list-unstyled">
+            <li>
+                <img src="./imgs/slide1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide5.jpg" alt="">
+            </li>
+        </ul>
+        
+        <button>1</button>
+        
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            
+        </script>
+</body>
+</html>
