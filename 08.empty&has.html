@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table empty"> 
+        <tbody> 
+        <tr>
+            <td>1</td>
+            <td></td>
+            <td>3</td>
+            <td></td>
+        </tr> 
+        </tbody> 
+    </table>
+        
+        <div>abc</div>
+        <div>
+            <p>def</p>
+        </div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 選取的範圍一定要下好，確定對象再選取，空格表示是選取這個div裡面的孫層
+            $('.empty td:empty').css('background','pink')
+
+            // 選取有()內元素的div
+            $('div:has(p)').css('background','lightblue')
+        </script>
+</body>
+</html>

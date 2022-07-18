@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <button>add</button>
+        <div class="row">
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            
+            // 想要在每次點擊按鈕後增加item，且item會隨著點擊次數增加數字
+            // 用let設定變數，因為const不能用=自己的功能
+
+            // 新增節點在$('ul')子層最後 .append()
+            let nowIndex = 3
+
+            $('button').click(function(){
+                console.log('hi')
+                // 先別急試試看點擊後有沒有出現hi(確認有沒有設定錯誤)
+                $('ul').append('<li>item ' + nowIndex + '</li>')
+                nowIndex = nowIndex + 1
+                // 用let設定變數，因為const不能用=自己的功能，讓item會隨著點擊次數增加數字
+            })
+
+            // 新增節點在$('ul')子層的最前 .prepend()
+            $('button').click(function(){
+                console.log('hi')
+                $('ul').prepend('<li>item ' + nowIndex + '</li>')
+                // nowIndex = nowIndex + 1
+            })
+
+            // 新增節點在$('ul')同一層的前面 .before()
+            $('button').click(function(){
+                console.log('hi')
+                $('ul').before('<li>item ' + nowIndex + '</li>')
+                // nowIndex = nowIndex + 1
+            })
+
+            // 新增節點在$('ul')同一層的後面 .after()
+            $('button').click(function(){
+                console.log('hi')
+                $('ul').after('<li>item ' + nowIndex + '</li>')
+                // nowIndex = nowIndex + 1
+            })
+        </script>
+</body>
+</html>

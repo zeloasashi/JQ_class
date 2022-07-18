@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        span {
+            color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="sample">Hello <span>World</span> </h1>
+    <h1 class="result">Welcome <span>World</span> </h1>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 在網頁檢查工具上的console可以看到文字結果
+        console.log('.sample text:', $('.sample').text())
+
+        // 可以將字串儲存變數，保留原本html寫的字，h1Text是變數名稱
+        const h1Text = $('.sample').text()
+        // 自己幫變數取名字
+
+
+        // js和jq可以修改html的內容
+        $('.sample').text('HEEEEEEEEELLO')
+        console.log('.sample text:', $('.sample').text())
+        // 在網頁檢查工具上的console可以看到文字已經被改變
+
+        // 將之前儲存的變數拿來用
+        $('.sample').text(h1Text)
+        console.log('h1Text:', h1Text)
+        // 在網頁檢查工具上的console可以看到文字又被改回來了，前面的引號是給自己的提示
+
+        // 也可以將html儲存變數，保留原本html寫的架構
+        const h1Html = $('.result').html()
+        $('.sample').html(h1Html)
+        // 將.sample改成.result的html架構
+
+    </script>
+</body>
+
+</html>

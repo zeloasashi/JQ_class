@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/FMVInrRakAIh7O.jpg" alt="">
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 取值 $(‘小圖’).attr( ‘src’ )
+            // 設值 $(‘大圖’).attr(‘src’, $(‘小圖’).attr( ‘src’ ))
+
+            // 將html寫的圖片設定成變數
+            const imgSrc = $('img').attr('src')
+            console.log('imgSrc',imgSrc)
+
+            // 換html的圖片
+            $('img').attr('src','./images/FNN1ApzaIAEtjOE.jpeg')
+
+            // 只要括號+大括號就能一次做兩次attr改東西
+            .attr({
+                src:'./images/31.png',
+                alt:'myAlt'
+            })
+        </script>
+</body>
+</html>

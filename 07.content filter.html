@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="names">Jason Kidd</div>
+<div class="names">LeBron James</div>
+<div class="names">Jason Williams</div>
+<div class="names">James Harden</div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 能選取內容字串的選擇器，大小寫一定要一樣
+        $('.names:contains(James)').css('background','black')
+    </script>
+</body>
+</html>

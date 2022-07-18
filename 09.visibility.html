@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 被hidden的不占寬高 -->
+    <div hidden>abc</div>
+<div><p>def</p></div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 如果不加show看不到選取的效果，不過如果用bootstrap的css這招會失效
+            $('div:hidden').show().css('background','orange')
+        </script>
+</body>
+</html>

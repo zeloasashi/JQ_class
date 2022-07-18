@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 補充val，老師寫在18.html哩，可以拿來寫練習3 -->
+    <form action="">
+        <label for="username">
+            <input id="username" type="text" placeholder="請輸入" value="sdfsfdsf">
+            <button class="btnAutoInput" type="button">Auto Input</button>
+        </label>
+        <br>
+        <label for="password">
+            <input id="password" type="password" placeholder="請輸入" value="sdfsfdsf">
+            <button class="btnAutoInput" type="button">Auto Input</button>
+        </label>
+        <br>
+        <label for="password2">
+            <input id="password2" type="password" placeholder="請輸入" value="sdfsfdsf">
+            <button class="btnAutoInput" type="button">Auto Input</button>
+        </label>
+    </form>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            $('button').click(function(){
+                console.log('hi');
+                $('#username').val('John')
+            })
+            // 密碼
+            $('button').click(function(){
+                console.log('hi');
+                $('#password').val('John')
+            })
+            // 密碼顯示和隱藏，2:08之前
+            $('button').click(function(){
+                console.log('hi');
+                if($('#password').val('text'){
+
+                })
+                else($('#password').val('password'){
+
+                })
+            })
+        </script>
+</body>
+</html>

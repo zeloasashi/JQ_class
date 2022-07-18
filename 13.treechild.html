@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <ul class="level1">
+                <li class="item1">item1</li>
+                <li class="item2">item2
+                    <ul class="level2">
+                        <li class="item01">item01</li>
+                        <li class="item02">item02
+                            <ul class="level3">
+                                <li class="item001">item001</li>
+                                <li class="item002">item002</li>
+                                <li class="item003">item003</li>
+                            </ul>
+                        </li>
+                        <li class="item03">item03</li>
+                    </ul>
+                </li>
+                <li class="item3">item3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            $('.level1').children('.item1').css('background','yellow')
+            // children選擇器只能找一層子層，所以01、001都找不到(那是孫層跟曾曾孫層了)
+
+            $('.level1').find('.item002').css('background','orange')
+            // find能找到所有條件相符的子&孫元素
+
+            $('.item01').closest('ul').css('background','lightgreen')
+            // closest找最接近的直系血親(含自己)，旁系不算!!最常用
+
+            $('.item002').parentsUntil('.level2').css('background','coral')
+            // parentsUntil找到上層但不包含()那層
+
+            $('.item3').prev().css('background','lightblue')
+            // .prev往前找一個元素
+
+            $('.item1').nextAll().css('background','pink')
+
+            
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="img-demo d-flex justify-content-center">
+                    <img src="./images/b1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12">
+                <!-- 因為要讓這兩個col在同一個row裡排成兩行，所以要設col-12，讓這兩個col占滿一整欄 -->
+                <div class="img-selector d-flex">
+                    <div class="img-wrap">
+                        <img class="w-100" src="./images/b1.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="w-100" src="./images/b2.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="w-100" src="./images/b3.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="w-100" src="./images/b4.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="w-100" src="./images/b5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 點選小圖換大圖要拆解步驟
+            // 1.時機:點小圖的時候(事件)
+            // 2.誰要換圖片?
+            // 3.換成什麼圖片
+            // 4.怎麼知道誰被點? 被點擊的那一刻，瀏覽器會告訴你答案
+            $('.img-wrap > img').click(function(){
+                $('.img-demo > img').attr('src',$(this).attr('src'));
+            })
+            
+            // 也可以將$(this).attr('src')設定成變數以換圖片
+            $('.img-wrap > img').click(function(){
+                // 變數要放在裡面，瀏覽器才知道所指的this是.img-wrap > img
+                // this是jq特有的變數，不是字串所以不用加引號，80%的情況下是指誰用function呼叫就是指該東東，如現在就是點擊.img-wrap > img後所產生的情況，所以this是.img-wrap > img
+                const imgClickSrc = $(this).attr('src')
+                $('.img-demo > img').attr('src',imgClickSrc);
+            })
+        </script>
+</body>
+</html>

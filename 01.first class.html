@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 舊的寫法 -->
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('h1').css('color','orange')
+        })
+    </script> -->
+    
+
+</head>
+<body>
+    <h1>JQuery</h1>
+    <h2>Java Script</h2>
+    
+    
+    <!-- 現在的寫法
+         不看權重，是看執行順序，所以後寫會蓋掉先寫 -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('h1').css('color','coral')
+        // 加逗號可以一次選多個選擇器 
+        $('h2,h1').css('color','orange')
+        $('h1').text('it\'s rainning')
+        // 輸入text改字。為了區分結束的單引號，要加一個\
+
+
+        // 變數與模板字串
+        // 變數一定要寫在最前面，let跟var相似，不能重複宣告
+        let x = 10
+        // var x = 20
+        
+        // 常數變數const，將數值變固定的，不會再被更改
+        // const x = 30
+        console.log('start')
+        console.log(x)
+        console.log('end')
+
+        // 不能重複宣告，如果後面要改數值，直接下x=
+        x=30
+        console.log(x)
+
+        var weekday = 'wed'
+        $('h1').text(`it\s ${weekday} day`)
+
+
+    </script>
+</body>
+</html>

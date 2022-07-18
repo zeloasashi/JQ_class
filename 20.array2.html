@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            
+            const userlist = [
+                {username:'Asiripa', tel:'123456789', birth:'1/1'},
+                {username:'Sukimoto', tel:'987654321', birth:'3/1'},
+                {username:'Siraisi', tel:'000000000', birth:'3/4'}
+            ]
+            // 開網頁的console看能不能找到值，如
+            // userlist[0]、userlist[0].birth
+
+            // 開網頁的console看布林值(true/false)
+            if(userlist[1]['username'] == 'Asiripa'){
+                document.write('Yes')
+            }
+            else{
+                document.write('NO')
+            }
+
+            // OR的符號是||，確認是否有值
+            // AND的符號是&&，用在判斷式
+            // js會透過布林值(boolean)轉型，輸入0表示false
+            
+        </script>
+</body>
+</html>

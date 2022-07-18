@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <td><h1>td01</h1></td>
+                <td>td02</td>
+                <td>td03</td>
+                <td>td04</td>
+                <td>td05</td>
+            </tr>
+            <tr>
+                <td>td01</td>
+                <td>td02</td>
+                <td><h2>td03</h2></td>
+                <td>td04</td>
+                <td>td05</td>
+            </tr>
+            <tr>
+                <td>td01</td>
+                <td>td02</td>
+                <td>td03</td>
+                <td>td04</td>
+                <td>td05</td>
+            </tr>
+            <tr>
+                <td>td01</td>
+                <td>td02</td>
+                <td>td03</td>
+                <td><h3>td04</h3></td>
+                <td>td05</td>
+            </tr>
+            <tr>
+                <td>td01</td>
+                <td>td02</td>
+                <td>td03</td>
+                <td>td04</td>
+                <td>td05</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 開始新世界~~和filter:不一樣，.的東西要寫在括號外，可以直接寫成一行就好，能更靈活的運用
+            $('td').css('background','purple').css('color','white').eq(7).css('background','yellow').eq(0).css('color','black')
+            // 選取第七格的第零個改字的顏色
+        </script>
+</body>
+</html>

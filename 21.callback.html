@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img src="./images/09.png" alt="">
+    <img src="./images/29.png" alt="">
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 滑鼠點擊事件
+            // callback function回呼函式(有時間差，不是立即執行，而是做了此動作後才會執行)
+            // 點擊圖片後console log才列印出img clicked這段文字
+          $('img').click(function(){
+            console.log('img clicked');
+          })  
+
+            // 這次事件的主角(被執行才做事的對象)是圖片，如果有多張圖片的話可以用'this'代替
+            // 點擊圖片後，console log才列印出img的來源(src)
+            $('img').click(function(){
+            console.log('img clicked',$(this).attr('src'));
+          }) 
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span>span1</span>
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+            <div class="col">col4</div>
+            <div class="col">col5</div>
+            <div class="col">col6</div>
+        </div>
+    </div>
+    
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.col:first-child').css('background','coral')
+        // 將span加在col之前，col就不是row裡面的長子，所以不能被選到(兩個條件都要符合)
+
+        $('.col:first-of-type').css('background','coral')
+
+        
+    </script>
+</body>
+</html>
