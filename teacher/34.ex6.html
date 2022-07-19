@@ -35,8 +35,18 @@
             </style>
 </head>
 <body>
-    <button id="page1">page1</button>
-    <button id="page2">page2</button>
+    <div class="button-group">
+        <button id="">page1</button>
+        <button id="">page2</button>
+        <button id="">page3</button>
+        <button id="">page4</button>
+        <button id="">page5</button>
+    </div>
+
+    <div class="next-prev-page">
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+    </div>
     <div class="wrap">
         <ul class="train list-unstyled d-flex">
             <li>
@@ -59,15 +69,62 @@
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
-        $('#page1').click(function(){
-            console.log('page1');
-            $('ul.train').css('transform', 'translateX(0px)');
+        let nowPage = 0;
+
+        $('#next').click(function(){
+            if(nowPage < 4){
+                nowPage = nowPage + 1;
+            }
+
+            // console.log('nowPage:',nowPage);
+            
+            // const moveX = nowPage * -800;
+            // $('ul.train').css('transform', `translateX(${moveX}px)`);
+            moveX(nowPage);
         })
 
-        $('#page2').click(function(){
-            console.log('page2');
-            $('ul.train').css('transform', 'translateX(-800px)');
+        $('#prev').click(function(){
+            if(nowPage > 0){
+                nowPage = nowPage - 1;
+            }
+            // console.log('nowPage:',nowPage);
+            // const moveX = nowPage * -800;
+            // $('ul.train').css('transform', `translateX(${moveX}px)`);
+            moveX(nowPage);
         })
+
+        // UNIT TEST
+        function moveX (nowPage){
+            const movement = nowPage * -800;
+            $('ul.train').css('transform', `translateX(${movement}px)`);
+        }
+
+        $('.button-group > button').click(function(){
+            nowPage = $(this).index();
+            // console.log('nowPage:',nowPage);
+
+            moveX(nowPage);
+            // const moveX = nowPage * -800;
+            // $('ul.train').css('transform', `translateX(${moveX}px)`);
+        })
+
+        // $('#page1').click(function(){
+        //     console.log('page1');
+        //     console.log($(this).index());
+        //     $('ul.train').css('transform', 'translateX(0px)');
+        // })
+
+        // $('#page2').click(function(){
+        //     console.log('page2');
+        //     console.log($(this).index());
+        //     $('ul.train').css('transform', 'translateX(-800px)');
+        // })
+
+        // $('#page3').click(function(){
+        //     console.log('page2');
+        //     console.log($(this).index());
+        //     $('ul.train').css('transform', 'translateX(-1600px)');
+        // })
     </script>
 </body>
 </html>
