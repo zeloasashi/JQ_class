@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-        .wrap{
+        .wrap {
             width: 800px;
             height: 400px;
             overflow: hidden;
-            
+
         }
+
         /* 讓圖片變得跟爸爸一樣大有3個方法
         1.爸爸ul寬度改500%，因為總共5張圖，每張都100%
         2.祖父wrap的寬度設4000px，因為總共5張圖，每張都800px，爸爸ul寬度設100%
         3.用flex basis設0，然後flex gorw設1，先一起縮小再一起放大
          */
-        .wrap ul{
+        .wrap ul {
             width: 500%;
+            transition: .5s;
         }
-        li img{
+
+        li img {
             width: 100%;
         }
     </style>
 </head>
+
 <body>
     <div class="wrap">
-        <ul class="tran d-flex list-unstyled">
+        <div class="btn-group">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+        </div>
+        <ul class="train d-flex list-unstyled">
             <li>
                 <img src="./imgs/slide1.jpg" alt="">
             </li>
@@ -45,14 +58,25 @@
                 <img src="./imgs/slide5.jpg" alt="">
             </li>
         </ul>
-        
-        <button>1</button>
-        
+
+
+
+
     </div>
 
     <script src="./js/jquery-3.6.0.min.js"></script>
-        <script>
-            
-        </script>
+    <script>
+        // 可以將重複的部分設定成變數，如每張移動-800px就能換到下一張，就是n X -800px
+
+        $('.btn-group > button').click(function () {
+            const nowPage = $(this).index()
+            const moveX = nowPage * -800
+            $('ul.train').css('transform',`translateX(${moveX}px`)
+            })
+
+
+
+    </script>
 </body>
+
 </html>

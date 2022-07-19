@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="form-row">
+                <div class="form-group">
+                    <!-- 做完表格後先做下拉選單，另外後端看的是name的值，不是id -->
+                    <select name="city" id="city">
+                        <!-- 然後做下拉選單裡的選項，value可以寫中文但讀檔會比較久，建議寫數字或編號，陣列是從0開始算所以開頭是0 -->
+                        <option value="0">基隆</option>
+                        <option value="1">台北</option>
+                        <option value="2">新北</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="district" id="district">
+                        <option value="0">七堵</option>
+                        <option value="1">中正</option>
+                        <option value="2">暖暖</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 二維陣列
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+        ];
+        console.log('districtArray:', districtArray[0][2]);
+
+        // 還要做js
+    </script>
+</body>
+
+</html>
