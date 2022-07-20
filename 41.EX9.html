@@ -11,29 +11,33 @@
             width: 800px;
             height: 400px;
             background-color: #ccc;
-
+            position: relative;
         }
         .box{
             width: 100px;
             height: 100px;
             background-color: #aff;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
+        
     </style>
 </head>
 <body>
     
     <div class="wrap mx-auto">
         <div class="box"></div>
-        <div class="text-center">
-            <button id="up"></button>
-        </div>
-        <div class="text-center">
-            <button id="left"></button>
-            <button id="right"></button>
-        </div>
-        <div class="text-center">
-            <button id="down"></button>
-        </div>
+    </div>
+    <div class="text-center">
+        <button id="up"></button>
+    </div>
+    <div class="text-center">
+        <button id="left"></button>
+        <button id="right"></button>
+    </div>
+    <div class="text-center">
+        <button id="down"></button>
     </div>
     <script src="./js/jquery-3.6.0.min.js"></script>
         <script>
