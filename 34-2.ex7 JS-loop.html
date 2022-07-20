@@ -43,9 +43,32 @@
             ['中正', '大安', '信義'],
             ['蘆洲', '三重', '新店'],
         ];
+        // 用console.log檢查有沒有選到想要的位子
         console.log('districtArray:', districtArray[0][2]);
 
-        // 還要做js
+        // 讓選項2的區域可以配合選項1的城市做選取
+        // 什麼時候可以配合選取?→點擊的時候
+
+        $('#city').change(function () {
+            const cityNumber = $(this).val()
+            const districData = districtArray[cityNumber]
+
+            // 7/19教的一般寫法
+            // $('#district option').eq(0).text(districData[0])
+            // $('#district option').eq(1).text(districData[1])
+            // $('#district option').eq(2).text(districData[2])
+
+            // 7/20教的迴圈寫法，更方便
+            // i是index的縮寫
+            // 1. for迴圈
+            
+                // 2.用陣列寫迴圈：JS原生的陣列方法
+                districData.forEach(function(item,index){
+                    console.log('item:',item);
+                    console.log('index:',index);
+                })
+            })
+
     </script>
 </body>
 

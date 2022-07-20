@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .wrap{
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #aff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap mx-auto">
+        <div class="box"></div>
+        <div class="text-center">
+            <button id="up"></button>
+        </div>
+        <div class="text-center">
+            <button id="left"></button>
+            <button id="right"></button>
+        </div>
+        <div class="text-center">
+            <button id="down"></button>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            $('#right').click(function () {
+                const left = parseInt($('.box').css('left'))
+                console.log('left:',left);
+                // let不是數字所以跑不出來
+                if(left < ($('.wrap').width() - $('.box').width())){
+                    $('.box').css('left','+=100')
+                }
+            })
+        </script>
+</body>
+</html>

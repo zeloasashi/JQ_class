@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="hi">hi</button>
+    <button id="on">on</button>
+    <button id="off">off</button>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 先以重複綁定示範
+            // hi按鈕要等按過on後才會印出hello，而且如果按了很多次on，hi也會跟著連動印出很多hello
+
+            const sayhi = function(){
+                    console.log('hello')
+            }
+
+            $('#on').click(function(){
+                console.log('on')
+                $('#hi').click(sayhi)
+            })
+            // 取消on建立的事件，且主詞要是同一個人→設定變數const sayhi
+            $('#off').click(function(){
+                console.log('off')
+                $('#hi').off('click',sayhi)
+            })
+
+
+        </script>
+</body>
+</html>

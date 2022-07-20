@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        margin: 0;
+        height: 300vh;
+    }
+    .wrap{
+        width: 100%;
+        height: 50px;
+        background-color: #ccc;
+        position: fixed;
+        top: 0;
+    }
+    .progressBar{
+        width: 50%;
+        height: 100%;
+        background-color: lightcoral;
+    }
+</style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="progressBar"></div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(window).scroll(function(){
+                console.log('scrollTop:',$(window).scrollTop());
+                console.log('body height:',$('body').height());
+                // console.log('相除:',$(window).scrollTop() / $('body').height());
+                // 分母=body全長-window可見高度，因為捲軸也有一個高度，不可能真的到body最下方
+            const denominator = $('body').height() - $(window).height();
+            const percentage = $(window).scrollTop() / denominator * 100;
+            // 占幾分之幾的百分比
+            console.log('percentage:',percentage);
+            $('.progressBar').css('width',`${percentage}%`)
+            })
+
+            // 還有其他做法
+        </script>
+</body>
+</html>

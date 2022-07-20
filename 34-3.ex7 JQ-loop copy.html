@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="form-row">
+                <div class="form-group">
+                    <!-- 做完表格後先做下拉選單，另外後端看的是name的值，不是id -->
+                    <select name="city" id="city">
+                        <!-- 然後做下拉選單裡的選項，value可以寫中文但讀檔會比較久，建議寫數字或編號，陣列是從0開始算所以開頭是0 -->
+                        <option value="0">基隆</option>
+                        <option value="1">台北</option>
+                        <option value="2">新北</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="district" id="district">
+                        <option value="0">七堵</option>
+                        <option value="1">中正</option>
+                        <option value="2">暖暖</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 二維陣列
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+        ];
+        // 用console.log檢查有沒有選到想要的位子
+        console.log('districtArray:', districtArray[0][2]);
+
+        // 讓選項2的區域可以配合選項1的城市做選取
+        // 什麼時候可以配合選取?→點擊的時候
+
+        $('#city').change(function () {
+            const cityNumber = $(this).val()
+            const districData = districtArray[cityNumber]
+
+            // 7/19教的一般寫法
+            // $('#district option').eq(0).text(districData[0])
+            // $('#district option').eq(1).text(districData[1])
+            // $('#district option').eq(2).text(districData[2])
+
+            // 7/20教的迴圈寫法，更方便
+            // i是index的縮寫
+            // 1. for迴圈
+            
+                // 2.用陣列寫迴圈：JQ的寫法
+
+                // 用empty+append的方法，empty只要執行一次就好，所以不用放在迴圈裡面，而是移到外面(不然會重複執行)
+                // 如果不empty的話每個選項會受到append的影響一直重複出現
+                $('#district').empty()
+
+                $(districData).each(function(index,item){
+                    console.log('JQ item:',item);
+                    console.log('JQ index:',index);
+                    // $('#district option').eq(index).text(item)
+                    $('#district').append(`<option value='${index}'>${item}</option>`)
+                })
+            })
+            // 迴圈也可以用在資料庫放圖片，如EX6的輪播牆
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // .on()修改主詞(選取ul裡的li)就可以讀取到後來新增的節點，也就是
+            // $(選擇器(原本就存在HTML上之元素)).on( 觸發方式(原本的”click”,”mouseenter”…等) [, 程式動態產生的元素 ] , 事件處理(function(){}))
+            $('ul').on('click','li',function(){
+                console.log('test:',$(this).text());
+            })
+
+            // 原本學的寫法，但是無法選到在jq新增的DOM節點
+            // $('li').click(function(){
+            //     console.log('test:',$(this).text());
+            // })
+
+            $('button').click(function(){
+                $('ul').append('<li>item 3</li>')
+            })
+            // 上面的寫法也可以改用.on()寫
+            $('button').on('click',function(){
+                $('ul').append('<li>item 123456</li>')
+            })
+        </script>
+
+</body>
+</html>

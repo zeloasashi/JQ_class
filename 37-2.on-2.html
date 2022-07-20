@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+    <h1 id="showAction"></h1>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 同個選擇器想綁定多個不同的事件
+        // .on()時沒有hover，要用mouseenter和mouseleave
+        $("button").on({
+            mouseenter: function () {
+                $("#showAction").text("Mouse Enter");
+            },
+            click: function () {
+                $("#showAction").text("Click");
+            },
+            dblclick: function () {
+                $("#showAction").text("Double Click");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
