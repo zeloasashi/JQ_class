@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: #ccc;
+            border: 10px solid black;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 這樣可以很快知道div的寬高
+           console.log('width:',$('.box').width());
+           console.log('height:',$('.box').height());
+           console.log('innerWidth:',$('.box').innerWidth());
+           console.log('innerHeight:',$('.box').innerHeight());
+           console.log('outerWidth(true):',$('.box').outerWidth(true));
+           console.log('outerHeight(true):',$('.box').innerHeight(true));
+           
+
+        </script>
+</body>
+</html>

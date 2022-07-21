@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            transition: .5s;
+        }
+        .active{
+            background-color: #aaf;
+        }
+        .w500{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <button id="addClass" >Add Class</button>
+    <button id="removeClass" >Remove Class</button>
+    <button id="toggleClass" >toggle Class</button>
+    <button id="hasClass" >has Class</button>
+
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            $('#addClass').click(function () {
+                $('.box').addClass('active w500')
+                // .addClass()內寫的是要加入的class名字，不是選擇所以寫字串就好不用.
+                // 後面想再增加class要先空格
+            })
+            $('#removeClass').click(function(){
+                $('.box').removeClass('active w500')
+            })
+            // remove也加w500才會縮回來
+
+            // toggleClass動態切換css
+            $('#toggleClass').click(function(){
+                $('.box').toggleClass('active')
+            })
+
+            // hasClass搭配console.log和布林值使用
+            $('#hasClass').click(function(){
+                console.log('has w500:',$('.box').hasClass('w500'))
+            })
+        </script>
+</body>
+</html>

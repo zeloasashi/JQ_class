@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 800px;
+            height: 800px;
+            background-color: #ccc;
+            padding: 200px;
+        }
+        .wrap-inner{
+            width: 400px;
+            height: 400px;
+            background-color: #aaf;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #ffa;
+            position: absolute;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap-inner">
+            <div class="box"></div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 和offset很像，不過是知道相對位置，比較少用和難用
+            console.log('box position:',$('.box').position())
+        </script>
+</body>
+</html>
