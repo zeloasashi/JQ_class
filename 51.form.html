@@ -38,6 +38,7 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
         // 送出表單到PHP資料庫會自動重新整理，可設e.preventDegault()阻止，之後再用ajax送出
+        // 介紹ajax中的get(不安全，帳密會直接出現在網址上)和post(較安全→$.ajax({}))
         // event的簡寫是evt或e
         $('form').submit(function (e) {
             e.preventDefault()

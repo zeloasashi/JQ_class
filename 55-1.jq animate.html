@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #aff;
+
+        }
+    </style>
+
+</head>
+<body>
+    <button>click</button>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- JQ動畫不支援換顏色，所以要再加下面那段code -->
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+        <script>
+            $('button').click(function(){
+                $('.box').animate({
+                    width: '500px',
+                    opacity: '0.5',
+                    backgroundColor: '#afa'
+                }).animate({width:'100px',opacity:'1',backgroundColor:'#ffa'});
+
+            })
+        </script>
+</body>
+</html>

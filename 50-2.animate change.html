@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+        h1{
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="tada" data-aniname="tada">TADA!!</button>
+    <button id="backInDown" data-aniname="">backInDown</button>
+    <h1 class="animate__animated">An animated element</h1>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+        <script>
+            // 增加變化和彈性!
+            $('button').click(function(){
+                console.log('tada click',$(this).attr('id'));
+                // 要同時做兩個效果可以用$(this).attr('id')) / .text() 或data-aniname 看哪個名字和原本animation.css一樣
+                const animationName = 'animate__' + $(this).attr('id')
+                $('h1').addClass(animationName)
+                
+                $('h1').one('animationend',function(){
+                    console.log('h1 animationend');
+                    $('h1').removeClass(animationName)
+                })
+            })
+        </script>
+</body>
+</html>
